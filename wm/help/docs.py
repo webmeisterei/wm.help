@@ -12,12 +12,14 @@ from wm.help.interfaces import IHelpPlugin
 from zope.component.interfaces import ComponentLookupError
 from Products.statusmessages.interfaces import IStatusMessage
 from Products.CMFPlone.utils import safe_unicode
+from plone.memoize.ram import cache
 
 
 
+def _cache_key(method, self):
+    return (method, self.request.get('plugin',None), self.request.get('file', None))
 
 class DocumentationView(BrowserView):
-
 
     @Lazy
     def availablePlugins(self):
@@ -82,9 +84,8 @@ class DocumentationView(BrowserView):
 
         return data
 
-
+    @cache(_cache_key)
     def htmldata(self):
-
         convert = getToolByName(self.context, 'portal_transforms').convertTo
         text = safe_unicode(convert('text/html', self._rstData(), mimetype='text/x-rst').getData())
         text = self._imageLinks(text)
