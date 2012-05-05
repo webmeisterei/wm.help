@@ -1,0 +1,47 @@
+# Manually defined message ids
+# Fabio Corneti <info@corneti.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: sm.types VERSION\n"
+"POT-Creation-Date: 2012-05-05 12:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Fabio Corneti <info@corneti.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: wm.help\n"
+
+#: ./wm/help/docs.pt:68
+msgid "Available Help Documents"
+msgstr ""
+
+#: ./wm/help/profiles/default/actions.xml
+msgid "Help"
+msgstr ""
+
+#: ./configure.zcml
+msgid "Help System"
+msgstr ""
+
+msgid "Installs pluggable help system"
+msgstr ""
+
+#. Default: "Back to Help Index"
+#: ./wm/help/docs.pt:83
+msgid "back-to-index"
+msgstr ""
+
+#. Default: "No help plugins registered."
+#: ./wm/help/docs.pt:78
+msgid "no-plugins"
+msgstr ""
+
+#: ./wm/help/docs.pt:73
+msgid "show"
+msgstr ""
+

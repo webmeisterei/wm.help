@@ -1,0 +1,99 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="wm.help">
+
+<style metal:fill-slot="style_slot">
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+#content > div.section {
+  margin-top: 4em;
+}
+</style>
+
+<!-- disable portlet columns -->
+<metal:block fill-slot="top_slot"
+                 tal:define="disable_column_one python:request.set('disable_plone.leftcolumn',0);
+                             disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
+
+
+<!-- navigation portlet for different documentation providers -->
+<metal:left-portlets fill-slot="portlets_one_slot">
+
+</metal:left-portlets>
+
+
+<body>
+
+    <metal:docs fill-slot="main">
+
+
+  <metal:multiplePlugins tal:condition="python:len(view.availablePlugins)!=1 and view.currentPlugin is None">
+    <h1 i18n:translate="">Available Help Documents</h1>
+
+    <ul tal:define="baseUrl context/@@plone_context_state/current_base_url">
+        <li tal:repeat="plugin view/availablePlugins">
+            <b><span tal:content="plugin/title">Plugin Title</span></b>
+            <a href="?plugin=name" tal:attributes="href string:${baseUrl}?plugin=${plugin/name}" i18n:translate="show">show</a>
+            <br/>
+            <p class="discreet" tal:content="plugin/description" tal:condition="plugin/description">Some descriptive text</p>
+        </li>
+    </ul>
+    <p tal:condition="python:len(view.availablePlugins)==0" i18n:translate="no-plugins">No help plugins registered.</p>
+  </metal:multiplePlugins>
+
+
+  <metal:onePlugin tal:condition="view/plugin">
+    <a href="#"
+       tal:condition="python:len(view.availablePlugins)>1"
+       tal:attributes="href context/plone_context_state/current_base_url"
+       i18n:translate="back-to-index">Back to Help Index</a>
+
+    <div tal:replace="structure view/htmldata">
+    </div>
+
+
+  </metal:onePlugin>
+
+
+
+    </metal:docs>
+</body>
+</html>
+

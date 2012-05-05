@@ -1,0 +1,39 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="wm.help">
+
+
+  <!-- -*- extra stuff goes here -*- -->
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Help System"
+      directory="profiles/default"
+      description="Installs pluggable help system"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      i18n:attributes="title description"
+      />
+
+    <browser:view
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="help"
+        class=".docs.DocumentationView"
+        permission="plone.app.portlets.ViewDashboard"
+        allowed_attributes="">
+
+        <page name="show" template="docs.pt" />
+
+        <defaultPage name="show" />
+
+    </browser:view>
+
+
+    <i18n:registerTranslations directory="locales" />
+
+    <!--include package=".example" /-->
+
+</configure>

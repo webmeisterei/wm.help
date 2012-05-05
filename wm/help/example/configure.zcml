@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+    <!-- register our plugin -->
+    <utility
+        name="wm.help.example"
+        factory=".plugin.ExampleHelpPlugin"
+        />
+
+
+    <!-- register our image directory so plone can serve it's content -->
+    <browser:resourceDirectory
+        name="wm.help.example.images"
+        directory="img"
+        />
+
+</configure>

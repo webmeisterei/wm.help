@@ -1,0 +1,51 @@
+# Manually defined message ids
+# Fabio Corneti <info@corneti.com>, 2007.
+# Harald Friessnegger <harald@webmeisterei.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: sm.types VERSION\n"
+"POT-Creation-Date: 2012-05-05 12:04+0000\n"
+"PO-Revision-Date: 2012-05-05 14:05+0200\n"
+"Last-Translator: Harald Friessnegger <harald@webmeisterei.com>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: wm.help\n"
+"Language: de\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: ./wm/help/docs.pt:68
+msgid "Available Help Documents"
+msgstr "Verfügbare Dokumentation"
+
+#: ./wm/help/profiles/default/actions.xml
+msgid "Help"
+msgstr "Hilfe"
+
+#: ./configure.zcml
+msgid "Help System"
+msgstr "Hilfe System"
+
+msgid "Installs pluggable help system"
+msgstr "Installiert das erweiterbare Hilfesystem"
+
+#. Default: "Back to Help Index"
+#: ./wm/help/docs.pt:83
+msgid "back-to-index"
+msgstr "Zurück zum Hilfe-Index"
+
+#. Default: "No help plugins registered."
+#: ./wm/help/docs.pt:78
+msgid "no-plugins"
+msgstr "Keine Dokumentation Registriert"
+
+#: ./wm/help/docs.pt:73
+msgid "show"
+msgstr "anzeigen"
+
+
