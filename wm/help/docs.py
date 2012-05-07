@@ -1,3 +1,4 @@
+import Globals
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 import os
@@ -12,11 +13,14 @@ from wm.help.interfaces import IHelpPlugin
 from zope.component.interfaces import ComponentLookupError
 from Products.statusmessages.interfaces import IStatusMessage
 from Products.CMFPlone.utils import safe_unicode
-from plone.memoize.ram import cache
+from plone.memoize.ram import cache, DontCache
 
 
 
 def _cache_key(method, self):
+    if Globals.DevelopmentMode:
+        #don't cache help in debug mode
+        raise DontCache()
     return (method, self.request.get('plugin',None), self.request.get('file', None))
 
 class DocumentationView(BrowserView):
