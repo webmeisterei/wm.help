@@ -26,8 +26,9 @@ See wm.help.example for documentation on how to write your own help plugin.
 TODOS
 =====
 
-XXX
+fix regex for images to handle directives that use options too
 
-fix regex for images to handle directives that uses options too
+support for placeholders in links
+(eg. ``{{portal}}``, ``{{index}}``, ``{{plugin}}/my.plugin.name``)
 
 use a separate permision to access help
