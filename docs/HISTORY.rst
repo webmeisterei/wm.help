@@ -1,6 +1,13 @@
 Changelog
 #########
 
+
+dev
+===
+
+- Import plone.app.portlets to make sure permission `View Dashboard` is
+  available.
+
 0.1 (2013-05-08)
 ================
 
