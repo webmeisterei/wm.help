@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.1'
+version = '0.1.1'
 
 setup(name='wm.help',
       version=version,
@@ -15,7 +15,8 @@ setup(name='wm.help',
         "Programming Language :: Python",
         'Framework :: Plone',
         'Framework :: Plone :: 4.1',
-        'Framework :: Plone :: 4.2',           
+        'Framework :: Plone :: 4.2',
+        'Framework :: Plone :: 4.3',
         ],
       keywords='plone collective help documentation docutils rest restructuredtext rst',
       author='Harald Friessnegger',
