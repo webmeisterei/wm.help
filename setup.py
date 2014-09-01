@@ -6,7 +6,7 @@ version = '0.1.1'
 setup(name='wm.help',
       version=version,
       description="Infrastructure to add a ReStructuredText based help system to plone sites",
-      long_description=open("README.rst").read() + "\n" +
+      long_description=open("README.rst").read() + "\n\n" + 
                        open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
